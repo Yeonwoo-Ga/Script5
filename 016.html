@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+        const menus = ['짜장', '짬뽕', '탕수육'];
+        for(const menu of menus){
+        const target = $("#target");
+        $(`<p>${menu}</p>`).appendTo(target);
+    }
+}
+    </script>
+</head>
+<body>
+    <div id="target"></div>
+</body>
+</html>
