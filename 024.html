@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jumsu = 75;
+
+        //점수를 입력받아 90점 이상이면 우수, 70점 이상이면 보통, 아니면 재시험
+
+        function result(value){
+
+            if(value>=90){
+            return "우수";
+        } else if(value>=70) {
+            return "보통";
+        } else {
+            return "재시험";
+        }
+    }
+
+            console.log(result(jumsu)); 
+
+            //홀짝을 판정하는 함수를 정의하시오.
+
+            const number = 5;
+
+            function judg(value){
+                if(value%2===0){
+                    return "짝수"
+                } else if(value%2!==0){
+                return "홀수"
+                }
+            }
+
+            console.log(judg(number));
+
+            function pan(value){
+                return value%2===0 ? "짝수" : "홀수"
+            }
+
+            console.log(pan(number));
+    </script>
+</body>
+</html>

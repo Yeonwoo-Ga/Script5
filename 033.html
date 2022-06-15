@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #page{
+            display:flex;
+            width:100%;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+        }
+
+        img{
+            width:360px;
+            height:360px;
+           
+
+        }
+
+        .name{
+            text-align: center;
+            font-size : 20px;
+            font-weight:bold;
+        }
+
+        .tel{
+            text-align: center;
+            font-size : 20px;
+            font-weight:bold;
+        }
+
+        .address{
+            text-align: center;
+            font-size : 20px;
+            font-weight:bold;
+        }
+
+    </style>
+    <script>
+         const url = 'http://sample.bmaster.kro.kr/contacts?pageno=1&pagesize=12'
+         window.onload = function(){
+            $.ajax(url).done(function(x){
+                const contacts = x.contacts;
+                const $page = $("#page");
+                for(c of contacts){
+                    const $div = $('<div class="parent">').appendTo("#page");
+                    $('<img class="photo">').attr('src',c.photo).appendTo($div);
+                    $('<div class="name">').text(c.name).appendTo($div);
+                    $('<div class="tel">').text(c.tel).appendTo($div);
+                    $('<div class="address">').text(c.address).appendTo($div);
+            
+
+                }
+            })
+         }
+    </script>
+</head>
+<body>
+    <div id="page">
+
+    </div>
+</body>
+</html>
